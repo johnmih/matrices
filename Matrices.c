@@ -13,9 +13,6 @@ void clrscr(){
 //prints a matrix
 void print_mat(int rows, int cols, double mat[rows][cols]){
 	
-
-	printf("This is your matrix:\n\n");
-	
 	for(int i=0; i<rows; i++){
 		
 		for(int j=0; j<cols; j++)
@@ -414,8 +411,7 @@ int main() {
 					print_mat(n, n, inv);
 					
 					free(adj);
-					free(inv);
-					free(mat);			
+					free(inv);			
 				}
 				
 				double trace = 0;
@@ -423,7 +419,7 @@ int main() {
 					for(int j=0; j<n; j++)
 						if(i==j)
 							trace += mat[i][j];
-				printf("Matrix trace: tr(mat)=%lf", trace);
+				printf("Matrix trace: tr(mat)=%lf\n", trace);
 									
 				bool id=1, ut=1, lt=1;
 				for(int i=0; i<n; i++){				
@@ -499,7 +495,7 @@ int main() {
 				}
 				free(A);						
 				if(involutory)
-					printf("Matrix A is involutory.\n");		
+					printf("Matrix is involutory.\n");		
 			}
 						
 			free(mat);				
@@ -507,7 +503,7 @@ int main() {
 		else if(a=='3'){
 				
 				printf("You have chosen to do matrix operations.\n\n");
-				printf("\nChoose one of the following options by pressing the corresponding key, ranging from 1 to 4:\n");
+				printf("Choose one of the following options by pressing the corresponding key, ranging from 1 to 4:\n");
 				printf("1. Determinant Calculation\n");
 				printf("2. Add/Substract matrices\n");
 				printf("3. Multiply matrix with a number\n");
@@ -522,7 +518,7 @@ int main() {
 				} //ensures valid input
 				clrscr();
 			
-				if(b2==1){
+				if(b2=='1'){
 				
 					printf("Determinant Calculation\n");
 					
@@ -532,7 +528,7 @@ int main() {
 						
 					printf("det(mat)=%lf", det(n, mat));	
 				}
-				if(b2==2){
+				if(b2=='2'){
 				
 					printf("Add/Substract Matrices\n");
 					int n1, m1, n2, m2;
@@ -594,7 +590,7 @@ int main() {
 						}
 					}					
 				}
-				if(b2==3){
+				if(b2=='3'){
 				
 					printf("Multiply Matrix With Number\nEnter a real number:");
 					double l;
@@ -618,7 +614,7 @@ int main() {
 					print_mat(n, m, mat);		
 					free(mat);					
 				}
-				if(b2==4){
+				if(b2=='4'){
 				
 					printf("Multiply Matrices\n");
 					int n1, m1, n2, m2;
